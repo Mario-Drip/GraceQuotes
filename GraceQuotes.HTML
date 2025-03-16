@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Quotes</title>
+    <style>
+        /* Animated Background */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 123, 255, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px;
+        }
+        nav a:hover {
+            background: #0056b3;
+            border-radius: 5px;
+        }
+
+        /* Title */
+        h1 {
+            font-size: 50px;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 80px;
+        }
+
+        /* Floating Quote Box */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 60%;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        #quote {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Button */
+        button {
+            padding: 10px 15px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        /* Horatio Quote */
+        .horatio-quote {
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 10px;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <h1>Grace Quotes</h1>
+    
+    <div class="container">
+        <p id="quote">Click the button to get a quote!</p>
+        <button onclick="generateQuote()">New Quote</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>V 1.0.0</p>
+        <p>@Grace-Quotes 2025 Copyright</p>
+    </div>
+
+    <!-- Horatio Quote -->
+    <p class="horatio-quote">"It is well with my soul." - Horatio Spafford</p>
+
+    <script>
+        const quotes = [
+            "The best way to predict the future is to create it.",
+            "Life is what happens when you're busy making other plans.",
+            "The purpose of our lives is to be happy.",
+            "You only live once, but if you do it right, once is enough."
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
